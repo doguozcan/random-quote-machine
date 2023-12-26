@@ -85,9 +85,10 @@ function App() {
           target="_blank"
           className="btn btn-info"
           href={
-            "https://twitter.com/intent/tweet?hashtags=quotes&amp;related=freecodecamp&amp;text=" +
-            quotes[quoteIndex].quote.replace(/ /g, "%20") +
-            quotes[quoteIndex].author.replace(/ /g, "%20")
+            "https://twitter.com/intent/tweet?hashtags=quotes&text=" +
+            encodeURIComponent(
+              quotes[quoteIndex].quote + " - " + quotes[quoteIndex].author
+            )
           }
         >
           Tweet Quote
